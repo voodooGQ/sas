@@ -3,14 +3,25 @@ import { connect } from "react-redux";
 import { Route, Router, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import history from "../history";
+import { setActiveNavItemFromStorage } from "../redux/actions/ui";
+import { HeaderState } from "../redux/types";
 import "./App.scss";
 import Experience from "./experience/Experience";
 import Home from "./home/Home";
 import Header from "./ui/Header";
 
-interface Props {}
+interface Props {
+  header: HeaderState;
+  setActiveNavItemFromStorage: () => Promise<void>;
+}
 
 class App extends React.Component<Props> {
+  public componentDidMount = () => {
+    if (!this.props.header.active) {
+      this.props.setActiveNavItemFromStorage();
+    }
+  };
+
   public render(): JSX.Element {
     return (
       <React.Fragment>
@@ -28,4 +39,8 @@ class App extends React.Component<Props> {
   }
 }
 
-export default connect(null, null)(App);
+const mapStateToProps = (state: { header: HeaderState }) => {
+  return { header: state.header };
+};
+
+export default connect(mapStateToProps, { setActiveNavItemFromStorage })(App);

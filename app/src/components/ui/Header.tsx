@@ -20,7 +20,7 @@ class Header extends React.Component<Props> {
 
   public render(): JSX.Element {
     return (
-      <Menu stackable inverted widths={6}>
+      <Menu stackable inverted widths={6} pointing size="huge">
         <Menu.Item>
           <img
             src={me}
