@@ -1,3 +1,6 @@
 import { combineReducers } from "redux";
+import { header } from "./ui";
 
-export default combineReducers({});
+export default combineReducers({
+  header,
+});
