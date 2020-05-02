@@ -1,0 +1,10 @@
+{
+  "articles": [
+    {
+      "slug": "foo-bar",
+      "title": "Foo Bar",
+      "location": "./articles/foo-bar.md",
+      "date": "2020-05-02"
+    }
+  ]
+}

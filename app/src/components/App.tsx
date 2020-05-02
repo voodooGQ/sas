@@ -6,8 +6,9 @@ import history from "../history";
 import { setActiveNavItemFromStorage } from "../redux/actions/ui";
 import { HeaderState } from "../redux/types";
 import "./App.scss";
+import BlogDetail from "./blog/BlogDetail";
+import BlogList from "./blog/BlogList";
 import Experience from "./experience/Experience";
-import Home from "./home/Home";
 import Training from "./training/Training";
 import Header from "./ui/Header";
 import Volunteer from "./volunteer/Volunteer";
@@ -31,10 +32,11 @@ class App extends React.Component<Props> {
           <Container className="site">
             <Header></Header>
             <Switch>
-              <Route path="/" exact component={Home} />
+              <Route path="/" exact component={BlogList} />
               <Route path="/experience" exact component={Experience} />
               <Route path="/training" exact component={Training} />
               <Route path="/volunteer" exact component={Volunteer} />
+              <Route path="/blog/:slug" exact component={BlogDetail} />
             </Switch>
           </Container>
         </Router>
