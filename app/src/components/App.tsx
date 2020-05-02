@@ -1,11 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Route, Router, Switch } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+import Header from "./ui/Header";
+import history from "../history";
 
 interface Props {}
 
 class App extends React.Component<Props> {
   public render(): JSX.Element {
-    return <div>App</div>;
+    return (
+      <React.Fragment>
+        <Router history={history}>
+          <Container>
+            <Header></Header>
+          </Container>
+        </Router>
+      </React.Fragment>
+    );
   }
 }
 

@@ -7,3 +7,5 @@ class Header extends React.Component<Props> {
     return <header>Header</header>;
   }
 }
+
+export default Header;
