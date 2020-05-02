@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 interface Props {}
 
 class App extends React.Component<Props> {
-  render(): JSX.Element {
+  public render(): JSX.Element {
     return <div>App</div>;
   }
 }
