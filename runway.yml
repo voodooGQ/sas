@@ -1,0 +1,16 @@
+deployments:
+  - modules:
+      - path: app
+        type: static
+        environments:
+          dev:
+            namespace: sas-dev
+          prod:
+            namespace: sas-prod
+        options:
+          build_output: build
+          build_steps:
+            - yarn install
+            - yarn run build
+    regions:
+      - us-east-1
