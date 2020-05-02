@@ -139,7 +139,9 @@ class Training extends React.Component<Props> {
           className="page-header"
         >
           <Icon name="book" circular inverted color="orange" />
-          <Header.Content>Training</Header.Content>
+          <Header.Content className="page-header-content">
+            Training
+          </Header.Content>
         </Header>
         {this.renderTraining()}
         {this.renderSkills()}

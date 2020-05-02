@@ -24,7 +24,9 @@ class Experience extends React.Component<Props> {
           className="page-header"
         >
           <Icon name="briefcase" circular inverted color="purple" />
-          <Header.Content>Experience</Header.Content>
+          <Header.Content className="page-header-content">
+            Experience
+          </Header.Content>
         </Header>
         <div className="experience">
           <div className="experience-card">

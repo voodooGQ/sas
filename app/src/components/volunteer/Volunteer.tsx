@@ -65,7 +65,9 @@ class Volunteer extends React.Component<Props> {
           className="page-header"
         >
           <Icon name="handshake outline" circular inverted color="blue" />
-          <Header.Content>Volunteer</Header.Content>
+          <Header.Content className="page-header-content">
+            Volunteer
+          </Header.Content>
         </Header>
         {this.renderVolunteerList()}
         <Header as="h2" inverted className="open-source-header" size="huge">
