@@ -20,7 +20,7 @@ class Header extends React.Component<Props> {
 
   public render(): JSX.Element {
     return (
-      <Menu stackable inverted>
+      <Menu stackable inverted widths={6}>
         <Menu.Item>
           <img
             src={me}
@@ -34,9 +34,49 @@ class Header extends React.Component<Props> {
           name="home"
           active={this.props.header.active === "home"}
           onClick={this.handleItemClick}
-          to="/home"
+          to="/"
         >
           Home
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link}
+          name="experience"
+          active={this.props.header.active === "experience"}
+          onClick={this.handleItemClick}
+          to="/experience"
+        >
+          Experience
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link}
+          name="training"
+          active={this.props.header.active === "training"}
+          onClick={this.handleItemClick}
+          to="/"
+        >
+          Training
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link}
+          name="volunteer"
+          active={this.props.header.active === "volunteer"}
+          onClick={this.handleItemClick}
+          to="/"
+        >
+          Volunteer
+        </Menu.Item>
+
+        <Menu.Item
+          as={Link}
+          name="blog"
+          active={this.props.header.active === "blog"}
+          onClick={this.handleItemClick}
+          to="/"
+        >
+          Blog
         </Menu.Item>
       </Menu>
     );

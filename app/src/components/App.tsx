@@ -4,7 +4,8 @@ import { Route, Router, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import history from "../history";
 import "./App.scss";
-import HomePage from "./pages/HomePage";
+import Experience from "./experience/Experience";
+import Home from "./home/Home";
 import Header from "./ui/Header";
 
 interface Props {}
@@ -17,7 +18,8 @@ class App extends React.Component<Props> {
           <Container>
             <Header></Header>
             <Switch>
-              <Route path="/" exact component={HomePage} />
+              <Route path="/" exact component={Home} />
+              <Route path="/experience" exact component={Experience} />
             </Switch>
           </Container>
         </Router>
