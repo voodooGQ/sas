@@ -1,0 +1,8 @@
+.ui.site.menu {
+  background: #363636 !important;
+  margin-bottom: 80px;
+}
+
+.ui.inverted.pointing.site.menu .active.item::after {
+  background: #545454 !important;
+}

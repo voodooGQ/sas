@@ -26,7 +26,7 @@ class App extends React.Component<Props> {
     return (
       <React.Fragment>
         <Router history={history}>
-          <Container>
+          <Container className="site">
             <Header></Header>
             <Switch>
               <Route path="/" exact component={Home} />

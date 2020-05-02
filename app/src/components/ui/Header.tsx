@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Menu, MenuItemProps } from "semantic-ui-react";
 import { setActiveNavItem } from "../../redux/actions/ui";
 import { HeaderState } from "../../redux/types";
+import "./Header.scss";
 import me from "./me.jpeg";
 
 interface Props {
@@ -20,7 +21,7 @@ class Header extends React.Component<Props> {
 
   public render(): JSX.Element {
     return (
-      <Menu stackable inverted widths={6} pointing size="huge">
+      <Menu stackable inverted widths={6} pointing size="huge" className="site">
         <Menu.Item>
           <img
             src={me}
