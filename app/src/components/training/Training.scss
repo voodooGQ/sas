@@ -1,0 +1,47 @@
+.training {
+  font-size: 1.5em;
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.skills {
+  .skills-list {
+    list-style: none;
+    margin-left: -40px;
+    display: inline-block;
+    width: 100%;
+
+    .skill {
+      background: #363636;
+      color: white;
+      height: 40px;
+      font-size: 1.2em;
+      display: flex;
+      border-radius: 20px;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      img {
+        float: left;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-top: 5px;
+        margin-left: 10px;
+      }
+      .skill-text {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 20px;
+      }
+    }
+  }
+}

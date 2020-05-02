@@ -1,0 +1,84 @@
+{
+  "volunteer": [
+    {
+      "title": "Developer @ Nerdery Overnight Web Challenge",
+      "year": "2013",
+      "description": "Building a team to develop a website for a non-profit organization within a 24 hour period. Was responsible for all JavaScript based animations and interactions on the frontend as well as WordPress configuration on the backend."
+    },
+    {
+      "title": "Developer @ Nerdery Overnight Web Challenge",
+      "year": "2014",
+      "description": "Building a team to develop a website for a non-profit organization within a 24 hour period. Was responsible for setting up custom post types for the WordPress architecture as well as the underlying JavaScript framework integrated via RequireJS"
+    },
+    {
+      "title": "Speaker @ Prime Digital Academy",
+      "year": "2015 - 2016",
+      "description": "Guest speaker for various cohorts at Prime Digital Academy. Spoke about working as a remote developer, communication techniques, etiquette, self-discipline, and keeping yourself active in the community."
+    },
+    {
+      "title": "Mentor @ Prime Digital Academy",
+      "year": "2015 - 2016",
+      "description": "Mentored individual students from various school cohorts as they went through their training bootcamp. Was available for questions, homework assistance, and general mentorship responsibilities."
+    }
+  ],
+  "open-source-contributions": [
+    {
+      "title": "Sailplane",
+      "owner": "@onicagroup",
+      "repo": "https://github.com/onicagroup/sailplane",
+      "contributions": [
+        "pull/8",
+        "pull/11"
+      ]
+    },
+    {
+      "title": "Runway",
+      "owner": "@onicagroup",
+      "repo": "https://github.com/onicagroup/runway",
+      "contributions": [
+        "pull/53",
+        "pull/96",
+        "pull/103",
+        "pull/106",
+        "pull/108",
+        "pull/109",
+        "pull/125",
+        "pull/127",
+        "pull/131",
+        "pull/176",
+        "pull/193",
+        "pull/194",
+        "pull/201",
+        "pull/203",
+        "pull/211"
+      ]
+    },
+    {
+      "title": "CloudFormation Custom Resource Helper",
+      "owner": "AWS Cloudformation",
+      "repo": "https://github.com/aws-cloudformation/custom-resource-helper",
+      "contributions": [
+        "issues/30"
+      ]
+    },
+    {
+      "title": "Serverless Plugin: CloudFront Lambda Edge",
+      "owner": "Silvermine",
+      "repo": "https://github.com/silvermine/serverless-plugin-cloudfront-lambda-edge",
+      "contributions": [
+        "issues/49",
+        "pull/48"
+      ]
+    },
+    {
+      "title": "AWS Samples: Cloudfront Authorization At Edge",
+      "owner": "AWS Samples",
+      "repo": "https://github.com/aws-samples/cloudfront-authorization-at-edge",
+      "contributions": [
+        "issues/30",
+        "issues/35",
+        "pull/42"
+      ]
+    }
+  ]
+}

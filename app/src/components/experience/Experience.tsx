@@ -28,7 +28,7 @@ class Experience extends React.Component<Props> {
         </Header>
         <div className="experience">
           <div className="experience-card">
-            <img className="experience-image" src={rackspace} />
+            <img className="experience-image" src={rackspace} alt="Rackspace" />
             <h2 className="experience-header">Rackspace</h2>
             <h3 className="experience-position">Software Engineer III</h3>
             <ul className="experience-items">
@@ -50,7 +50,7 @@ class Experience extends React.Component<Props> {
           </div>
 
           <div className="experience-card">
-            <img className="experience-image" src={logikcull} />
+            <img className="experience-image" src={logikcull} alt="Logikcull" />
             <h2 className="experience-header">Logikcull</h2>
             <h3 className="experience-position">Senior Software Engineer</h3>
             <ul className="experience-items">
@@ -88,7 +88,11 @@ class Experience extends React.Component<Props> {
           </div>
 
           <div className="experience-card">
-            <img className="experience-image" src={linuxacademy} />
+            <img
+              className="experience-image"
+              src={linuxacademy}
+              alt="Linux Academy"
+            />
             <h2 className="experience-header">Linux Academy</h2>
             <h3 className="experience-position">
               Senior Lab Services Engineer
@@ -124,7 +128,7 @@ class Experience extends React.Component<Props> {
           </div>
 
           <div className="experience-card">
-            <img className="experience-image" src={nerdery} />
+            <img className="experience-image" src={nerdery} alt="Nerdery" />
             <h2 className="experience-header">Nerdery</h2>
             <h3 className="experience-position">Principal Software Engineer</h3>
             <ul className="experience-items">
@@ -164,7 +168,11 @@ class Experience extends React.Component<Props> {
           </div>
 
           <div className="experience-card">
-            <img className="experience-image" src={fastersolutions} />
+            <img
+              className="experience-image"
+              src={fastersolutions}
+              alt="Faster Solutions"
+            />
             <h2 className="experience-header">Faster Solutions</h2>
             <h3 className="experience-position">Senior Web Developer</h3>
             <ul className="experience-items">
@@ -191,7 +199,7 @@ class Experience extends React.Component<Props> {
           </div>
 
           <div className="experience-card">
-            <img className="experience-image" src={fiftybelow} />
+            <img className="experience-image" src={fiftybelow} alt="50 Below" />
             <h2 className="experience-header">50 Below</h2>
             <h3 className="experience-position">Senior Web Developer</h3>
             <ul className="experience-items">

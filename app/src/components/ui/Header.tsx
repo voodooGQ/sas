@@ -55,7 +55,7 @@ class Header extends React.Component<Props> {
           name="training"
           active={this.props.header.active === "training"}
           onClick={this.handleItemClick}
-          to="/"
+          to="/training"
         >
           Training
         </Menu.Item>
@@ -65,7 +65,7 @@ class Header extends React.Component<Props> {
           name="volunteer"
           active={this.props.header.active === "volunteer"}
           onClick={this.handleItemClick}
-          to="/"
+          to="/volunteer"
         >
           Volunteer
         </Menu.Item>

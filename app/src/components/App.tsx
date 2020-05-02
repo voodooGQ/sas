@@ -8,7 +8,9 @@ import { HeaderState } from "../redux/types";
 import "./App.scss";
 import Experience from "./experience/Experience";
 import Home from "./home/Home";
+import Training from "./training/Training";
 import Header from "./ui/Header";
+import Volunteer from "./volunteer/Volunteer";
 
 interface Props {
   header: HeaderState;
@@ -31,6 +33,8 @@ class App extends React.Component<Props> {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/experience" exact component={Experience} />
+              <Route path="/training" exact component={Training} />
+              <Route path="/volunteer" exact component={Volunteer} />
             </Switch>
           </Container>
         </Router>
