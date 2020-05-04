@@ -1,0 +1,4 @@
+envvars:
+  profile:
+    dev: personal
+    prod: personal

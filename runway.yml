@@ -2,11 +2,21 @@ deployments:
   - modules:
       - path: app
         type: static
+        profile: personal
         environments:
           dev:
             namespace: sas-dev
           prod:
             namespace: sas-prod
+            staticsite_aliases: shaneallensmith.com,www.shaneallensmith.com
+            staticsite_acmcert_arn: arn:aws:acm:us-east-1:212015066383:certificate/8425b8d1-2ffd-4d28-aa07-07705f667c9a
+            staticsite_custom_error_responses:
+              - ErrorCode: 403
+                ResponseCode: 200
+                ResponsePagePath: /index.html
+              - ErrorCode: 404
+                ResponseCode: 200
+                ResponsePagePath: /index.html
         options:
           build_output: build
           build_steps:
@@ -14,3 +24,5 @@ deployments:
             - yarn run build
     regions:
       - us-east-1
+    env_vars:
+      AWS_PROFILE: ${var aws_profile.${env DEPLOY_ENVIRONMENT}::default=personal}

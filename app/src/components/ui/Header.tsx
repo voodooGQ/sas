@@ -22,7 +22,7 @@ class Header extends React.Component<Props> {
   public render(): JSX.Element {
     return (
       <Menu stackable inverted widths={5} pointing size="huge" className="site">
-        <Menu.Item>
+        <Menu.Item as={Link} name="blog" onClick={this.handleItemClick} to="/">
           <img
             src={me}
             alt="Shane Allen Smith"
