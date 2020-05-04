@@ -9,6 +9,7 @@ import "./App.scss";
 import BlogDetail from "./blog/BlogDetail";
 import BlogList from "./blog/BlogList";
 import Experience from "./experience/Experience";
+import NotFound from "./NotFound";
 import Training from "./training/Training";
 import Header from "./ui/Header";
 import Volunteer from "./volunteer/Volunteer";
@@ -37,6 +38,7 @@ class App extends React.Component<Props> {
               <Route path="/training" exact component={Training} />
               <Route path="/volunteer" exact component={Volunteer} />
               <Route path="/blog/:slug" exact component={BlogDetail} />
+              <Route path="*" component={NotFound} />
             </Switch>
           </Container>
         </Router>
