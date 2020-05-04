@@ -2,7 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Header, Icon, Loader } from "semantic-ui-react";
-import { setBlogArticleData } from "../../redux/actions/blog";
+import showdown from "showdown";
+import { fetchBlogArticle, setBlogArticleData } from "../../redux/actions/blog";
+import "./BlogDetail.scss";
 
 interface MatchParams {
   slug: string;
@@ -10,24 +12,35 @@ interface MatchParams {
 
 interface Props extends RouteComponentProps<MatchParams> {
   articles: any;
+  currentArticleMarkdown: string;
   setBlogArticleData: () => Promise<void>;
+  fetchBlogArticle: (article: any) => Promise<void>;
 }
 
 interface State {
   article: any;
 }
 
-class BlogDetail extends React.Component<Props, State> {
-  state = { article: { title: undefined } };
+const converter = new showdown.Converter();
 
-  componentDidMount = () => {
-    this.props.setBlogArticleData().then(() => {
+class BlogDetail extends React.Component<Props, State> {
+  state = {
+    article: { title: undefined, icon: undefined, location: "" },
+  };
+
+  componentDidMount = async () => {
+    this.props.setBlogArticleData().then(async () => {
       this.setState({
         article: this.props.articles.find((a: any) => {
           return a.slug === this.props.match.params.slug;
         }),
       });
+      this.props.fetchBlogArticle(this.state.article);
     });
+  };
+
+  componentDidUpdate = () => {
+    window.Prism.highlightAll();
   };
 
   render() {
@@ -39,6 +52,9 @@ class BlogDetail extends React.Component<Props, State> {
       );
     }
 
+    const { title, icon } = this.state.article;
+    const html = converter.makeHtml(this.props.currentArticleMarkdown);
+
     return (
       <React.Fragment>
         <Header
@@ -49,18 +65,28 @@ class BlogDetail extends React.Component<Props, State> {
           size="huge"
           className="page-header"
         >
-          <Icon name="newspaper" circular inverted color="purple" />
+          <Icon name={icon} circular inverted color="purple" />
           <Header.Content className="page-header-content">
-            {this.state.article.title}
+            {title}
           </Header.Content>
         </Header>
+        <div
+          className="article line-numbers"
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
       </React.Fragment>
     );
   }
 }
 
 const mapStateToProps = (state: any) => {
-  return { articles: state.blog.articles };
+  return {
+    articles: state.blog.articles,
+    currentArticleMarkdown: state.blog.currentArticleMarkdown,
+  };
 };
 
-export default connect(mapStateToProps, { setBlogArticleData })(BlogDetail);
+export default connect(mapStateToProps, {
+  setBlogArticleData,
+  fetchBlogArticle,
+})(BlogDetail);

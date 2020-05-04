@@ -11,10 +11,8 @@ class BlogList extends React.Component<Props> {
     return data.articles.map((article) => {
       return (
         <li key={article.slug} className="blog-item">
-          <h2>
-            <a href={`/blog/${article.slug}`}>{article.title}</a> -{" "}
-            <span className="blog-date">{article.date}</span>
-          </h2>
+          <a href={`/blog/${article.slug}`}>{article.title}</a> -{" "}
+          <span className="blog-date">{article.date}</span>
         </li>
       );
     });
@@ -34,7 +32,7 @@ class BlogList extends React.Component<Props> {
           <Icon name="newspaper outline" circular inverted color="red" />
           <Header.Content className="page-header-content">Blog</Header.Content>
         </Header>
-        <ul className="blog-list">{this.renderItems()}</ul>
+        <ul>{this.renderItems()}</ul>
       </div>
     );
   }
