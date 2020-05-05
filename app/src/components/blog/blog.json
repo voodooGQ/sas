@@ -2,10 +2,17 @@
   "articles": [
     {
       "slug": "dynamic-markdown-loading-in-react",
-      "icon": "newspaper",
+      "icon": "download",
       "title": "Dynamic Markdown Loading in React (with TypeScript, Redux, and Showdown)",
       "location": "articles/dynamic-markdown-loading-in-react.md",
       "date": "2020-05-03"
+    },
+    {
+      "slug": "hacking-redux-form-radio-buttons",
+      "icon": "wpforms",
+      "title": "Hacking Redux Form Radio Buttons",
+      "location": "articles/hacking-redux-form-radio-buttons.md",
+      "date": "2020-05-05"
     }
   ]
 }
