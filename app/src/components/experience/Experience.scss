@@ -2,17 +2,21 @@
   .experience-card {
     clear: both;
     background: #363636;
-    color: #fefefe;
+    color: #fbf1c7;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 40px;
+    font-size: 1.3em;
+    line-height: 1.5em;
 
     .experience-header {
       font-size: 3em;
-      margin-top: 50px;
+      margin-top: 38px;
+      color: white !important;
     }
 
     .experience-position {
+      color: #a89984 !important;
       @media screen and (min-width: 600px) {
         margin-bottom: 75px;
       }
@@ -33,7 +37,7 @@
     .experience-items {
       li {
         font-size: 1.2em;
-        padding-bottom: 10px;
+        padding-bottom: 40px;
       }
     }
   }
