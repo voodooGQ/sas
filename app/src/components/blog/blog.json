@@ -13,6 +13,13 @@
       "title": "Hacking Redux Form Radio Buttons",
       "location": "articles/hacking-redux-form-radio-buttons.md",
       "date": "2020-05-05"
+    },
+    {
+      "slug": "typescript-to-play-nicely-with-composed-react-component",
+      "icon": "react",
+      "title": "TypeScript to play nicely with composed React component",
+      "location": "articles/typescript-to-play-nicely-with-composed-react.md",
+      "date": "2020-06-08"
     }
   ]
 }
