@@ -26,10 +26,7 @@
       "title": "Sailplane",
       "owner": "@onicagroup",
       "repo": "https://github.com/onicagroup/sailplane",
-      "contributions": [
-        "pull/8",
-        "pull/11"
-      ]
+      "contributions": ["pull/8", "pull/11"]
     },
     {
       "title": "Runway",
@@ -57,28 +54,25 @@
       "title": "CloudFormation Custom Resource Helper",
       "owner": "AWS Cloudformation",
       "repo": "https://github.com/aws-cloudformation/custom-resource-helper",
-      "contributions": [
-        "issues/30"
-      ]
+      "contributions": ["issues/30"]
     },
     {
       "title": "Serverless Plugin: CloudFront Lambda Edge",
       "owner": "Silvermine",
       "repo": "https://github.com/silvermine/serverless-plugin-cloudfront-lambda-edge",
-      "contributions": [
-        "issues/49",
-        "pull/48"
-      ]
+      "contributions": ["issues/49", "pull/48"]
     },
     {
       "title": "AWS Samples: Cloudfront Authorization At Edge",
       "owner": "AWS Samples",
       "repo": "https://github.com/aws-samples/cloudfront-authorization-at-edge",
-      "contributions": [
-        "issues/30",
-        "issues/35",
-        "pull/42"
-      ]
+      "contributions": ["issues/30", "issues/35", "pull/42"]
+    },
+    {
+      "title": "Udemy Enroll Everywhere",
+      "owner": "Keethesh",
+      "repo": "https://github.com/keethesh/UdemyEnrollEverywhere",
+      "contributions": ["pull/1"]
     }
   ]
 }
