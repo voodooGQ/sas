@@ -38,9 +38,9 @@ email: voodoogq@gmail.com | phone: 715.513.9160 | website: shaneallensmith.com
   development sites that were secured by the clients specific single sign-on
   service without the need for extensive configuration and planning. This
   effort is open sourced and available for public use.
-- Led the development effort for "Vend-r", an internal web applicaiton to automate
+- Led the development effort for "Vend-r", an internal web application to automate
   the creation of AWS Organization accounts and enforce authorization requirements
-  around Role assumption. This allowed the organization to closesly monitor the
+  around Role assumption. This allowed the organization to closely monitor the
   usage of AWS resources, quickly move employees from one authority group to
   another, and course correct any over spending on behalf of the user base.
 

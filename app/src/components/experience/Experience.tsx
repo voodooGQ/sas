@@ -58,10 +58,10 @@ class Experience extends React.Component<Props> {
               </li>
               <li>
                 Led the development effort for "Vend-r", an internal web
-                applicaiton to automate the creation of AWS Organization
+                application to automate the creation of AWS Organization
                 accounts and enforce authorization requirements around Role
-                assumption. This allowed the organization to closesly monitor
-                the usage of AWS resources, quickly move employees from one
+                assumption. This allowed the organization to closely monitor the
+                usage of AWS resources, quickly move employees from one
                 authority group to another, and course correct any over spending
                 on behalf of the user base.
               </li>
