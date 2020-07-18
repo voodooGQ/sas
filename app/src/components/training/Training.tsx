@@ -26,6 +26,19 @@ import reactIcon from "./icons/languages-and-frameworks/react.png";
 import ruby from "./icons/languages-and-frameworks/ruby.png";
 import typescript from "./icons/languages-and-frameworks/typescript.png";
 import wordpress from "./icons/languages-and-frameworks/wordpress.png";
+import cypress from "./icons/libraries/cypress.png";
+import puppeteer from "./icons/libraries/puppeteer.png";
+import semanticUI from "./icons/libraries/semantic-ui.png";
+import redux from "./icons/libraries/redux.png";
+import enzyme from "./icons/libraries/airbnb.png";
+import axios from "./icons/libraries/axios.png";
+import chartjs from "./icons/libraries/chart-js.png";
+import eslint from "./icons/libraries/eslint.png";
+import jest from "./icons/libraries/jest.png";
+import reactrouter from "./icons/libraries/react-router.png";
+import docker from "./icons/tools/docker.png";
+import bitbucketPipelines from "./icons/tools/bitbucketPipelines.png";
+
 import "./Training.scss";
 
 interface Props {}
@@ -62,6 +75,24 @@ class Training extends React.Component<Props> {
     { name: "WordPress", img: wordpress },
   ];
 
+  libraries = [
+    { name: "Axios", img: axios },
+    { name: "Chart JS", img: chartjs },
+    { name: "Cypress", img: cypress },
+    { name: "ESLint", img: eslint },
+    { name: "Enzyme", img: enzyme },
+    { name: "Jest", img: jest },
+    { name: "Puppeteer", img: puppeteer },
+    { name: "React Router", img: reactrouter },
+    { name: "Redux", img: redux },
+    { name: "Semantic UI", img: semanticUI },
+  ];
+
+  tools = [
+    { name: "Docker", img: docker },
+    { name: "Bitbucket Pipelines", img: bitbucketPipelines },
+  ];
+
   renderSkillsList(list: { name: string; img: string }[]) {
     return list.map((skill: { name: string; img: string }) => {
       const nameToLower = skill.name.toLowerCase().replace(" ", "");
@@ -94,6 +125,14 @@ class Training extends React.Component<Props> {
         <ul className="skills-list">
           {this.renderSkillsList(this.languagesAndFrameworks)}
         </ul>
+        <Header inverted as="h3">
+          Libraries
+        </Header>
+        <ul className="skills-list">{this.renderSkillsList(this.libraries)}</ul>
+        <Header inverted as="h3">
+          Tools
+        </Header>
+        <ul className="skills-list">{this.renderSkillsList(this.tools)}</ul>
       </div>
     );
   }
