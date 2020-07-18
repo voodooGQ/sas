@@ -21,7 +21,7 @@ class Header extends React.Component<Props> {
 
   public render(): JSX.Element {
     return (
-      <Menu stackable inverted widths={5} pointing size="huge" className="site">
+      <Menu stackable inverted widths={6} pointing size="huge" className="site">
         <Menu.Item as={Link} name="blog" onClick={this.handleItemClick} to="/">
           <img
             src={me}
@@ -68,6 +68,15 @@ class Header extends React.Component<Props> {
           to="/volunteer"
         >
           Volunteer
+        </Menu.Item>
+        <Menu.Item
+          as={Link}
+          name="resume"
+          onClick={() => {
+            window.location.href = "/resume/shaneallensmith.pdf";
+          }}
+        >
+          Resume
         </Menu.Item>
       </Menu>
     );
