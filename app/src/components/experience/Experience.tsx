@@ -37,16 +37,33 @@ class Experience extends React.Component<Props> {
               <li>
                 Responsible for Research and Development on various cloud based
                 technologies to assist in the creation of tools for our
-                development teams.
+                development teams. This often required pivoting between many
+                different languages, frameworks, and libraries to produce the
+                required project outcome.
               </li>
               <li>
-                Led the charge on the creation of 'Onica Start', a GUI based
-                application that communizes the various open source and internal
-                tool-sets offered by Onica.
+                Led the development effort for "Auth@Edge", an add-on to{" "}
+                <a
+                  href="https://docs.onica.com/projects/runway/en/release/index.html"
+                  target="_blank"
+                >
+                  Onica Group's "Runway"
+                </a>{" "}
+                allowing for the automated deployment of private static sites
+                backed by a Cognito authorizer. This allowed our development
+                teams to quickly and easily spin-up development sites that were
+                secured by the clients specific single sign-on service without
+                the need for extensive configuration and planning. This effort
+                is open sourced and available for public use.
               </li>
               <li>
-                Worked closely with Operations teams to help define and solidify
-                Site Reliability Engineering practices.
+                Led the development effort for "Vend-r", an internal web
+                applicaiton to automate the creation of AWS Organization
+                accounts and enforce authorization requirements around Role
+                assumption. This allowed the organization to closesly monitor
+                the usage of AWS resources, quickly move employees from one
+                authority group to another, and course correct any over spending
+                on behalf of the user base.
               </li>
             </ul>
           </div>

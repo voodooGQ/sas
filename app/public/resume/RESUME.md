@@ -28,15 +28,41 @@ email: voodoogq@gmail.com | phone: 715.513.9160 | website: shaneallensmith.com
 
 #### Software Engineer III @ Rackspace (formerly Onica) [**May 2019 - Present**]
 
-- Responsible for Research and Development on various cloud based technologies towards the creation of tools for our development teams.
-- Led the charge on the creation of 'Onica Start', a GUI based application that communizes the various open source and internal tool-sets offered by Onica.
-- Worked closely with Operations teams to help define and solidify Site Reliability Engineering practices.
+- Responsible for Research and Development on various cloud based technologies to
+  assist in the creation of tools for our development teams. This often required
+  pivoting between many different languages, frameworks, and libraries to produce
+  the required project outcome.
+- Led the development effort for "Auth@Edge", an add-on to Onica Group's "Runway"
+  allowing for the automated deployment of private static sites backed by a Cognito
+  authorizer. This allowed our development teams to quickly and easily spin-up
+  development sites that were secured by the clients specific single sign-on
+  service without the need for extensive configuration and planning. This
+  effort is open sourced and available for public use.
+- Led the development effort for "Vend-r", an internal web applicaiton to automate
+  the creation of AWS Organization accounts and enforce authorization requirements
+  around Role assumption. This allowed the organization to closesly monitor the
+  usage of AWS resources, quickly move employees from one authority group to
+  another, and course correct any over spending on behalf of the user base.
 
 #### Senior Engineer @ Logikcull [**May 2018 - May 2019**]
 
-- Led the effort to refactor the continuous integration and deployment pipeline and testing strategy surrounding deployments. Test suite previously took anywhere from 30 to 45 minutes to run, often with variability in passing results. That time was reduced to an average of 4 minutes while nullifying the "flappy" tests after refactor. This greatly increased deployment velocity of the team.
-- Led the effort and guided the team in converting the application from a monolith to multiple micro-services. Utilizing the Serverless framework services were created and planned around Kinesis which acted as a publish-subscribe endpoint for various event streams within the application suite. As new events were published to Kinesis the subscribing services would consume the event and perform any functionality on that data in real time. Following this strategy allowed for pieces to be segmented from the monolith into various single focus entities creating greater modularity and a better development experience.
-- Guided and mentored other team developers as the company began embracing a fundamentally agile process for handling projects. Previously the organization had leaned towards waterfall approaches that did not allow for the type of scalability required for the growth of the company.
+- Led the effort to refactor the continuous integration and deployment pipeline
+  and testing strategy surrounding deployments. Test suite previously took
+  anywhere from 30 to 45 minutes to run, often with variability in passing results.
+  That time was reduced to an average of 4 minutes while nullifying the "flappy"
+  tests after refactor. This greatly increased deployment velocity of the team.
+- Led the effort and guided the team in converting the application from a monolith
+  to multiple micro-services. Utilizing the Serverless framework services were
+  created and planned around Kinesis which acted as a publish-subscribe endpoint
+  for various event streams within the application suite. As new events were
+  published to Kinesis the subscribing services would consume the event and
+  perform any functionality on that data in real time. Following this strategy
+  allowed for pieces to be segmented from the monolith into various single focus
+  entities creating greater modularity and a better development experience.
+- Guided and mentored other team developers as the company began embracing a
+  fundamentally agile process for handling projects. Previously the organization
+  had leaned towards waterfall approaches that did not allow for the type of
+  scalability required for the growth of the company.
 
 #### Lab Services Engineer @ Linux Academy [**August 2017 - Present**]
 
