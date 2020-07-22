@@ -50,7 +50,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "resume": "scripts/md2pdf.js public/resume/RESUME.md public/resume/shaneallensmith.pdf"
+    "resume": "scripts/md2pdf.js public/resume/RESUME.md public/resume/shaneallensmith.pdf && cp public/resume/shaneallensmith.pdf ~/Code/github.com/voodoogq/jobhunt"
   },
   "eslintConfig": {
     "extends": "react-app"

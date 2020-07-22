@@ -64,7 +64,7 @@ email: voodoogq@gmail.com | phone: 715.513.9160 | website: shaneallensmith.com
   had leaned towards waterfall approaches that did not allow for the type of
   scalability required for the growth of the company.
 
-#### Lab Services Engineer @ Linux Academy [**August 2017 - Present**]
+#### Lab Services Engineer @ Linux Academy [**August 2017 - May 2018**]
 
 - Responsible for rearchitecting and redesigning a custom expectation testing
   library used to verify student assessment submissions of cloud platform
@@ -142,6 +142,7 @@ email: voodoogq@gmail.com | phone: 715.513.9160 | website: shaneallensmith.com
 
 ### Official Training and Certification
 
+- AWS Certified Developer Associate - [**2020**] - Amazon Web Services
 - Microsoft Certified Database Administrator - [**2001**] Connecting Point
   Information Technology School
 - Managing Emotions Under Pressure - [**2007**] Fred Pryor CareerTrack, Duluth, MN
