@@ -46,6 +46,7 @@ class Experience extends React.Component<Props> {
                 <a
                   href="https://docs.onica.com/projects/runway/en/release/index.html"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Onica Group's "Runway"
                 </a>{" "}
