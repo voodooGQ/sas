@@ -49,6 +49,8 @@ import vscode from "./icons/tools/vscode.png";
 import selenium from "./icons/tools/selenium.png";
 import vim from "./icons/tools/vim.png";
 import webpack from "./icons/libraries/webpack.png";
+import mysql from "./icons/tools/mysql.png";
+import postgres from "./icons/tools/postgres.png";
 
 interface Props {}
 
@@ -107,7 +109,9 @@ class Training extends React.Component<Props> {
     { name: "Bitbucket Pipelines", img: bitbucketPipelines },
     { name: "Charles", img: charles },
     { name: "Docker", img: docker },
+    { name: "MySQL", img: mysql },
     { name: "Onica Group's - Runway", img: onica },
+    { name: "Postgres", img: postgres },
     { name: "Selenium", img: selenium },
     { name: "Vim", img: vim },
     { name: "Visual Studio Code", img: vscode },
