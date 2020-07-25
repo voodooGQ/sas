@@ -1,8 +1,8 @@
 import "./Training.scss";
 
 import React from "react";
-import { connect } from "react-redux";
 import { Header, Icon } from "semantic-ui-react";
+import SkillsSection from "../../components/training/SkillsSection";
 
 import cloudformation from "./icons/aws/cloudformation.png";
 import cloudfront from "./icons/aws/cloudfront.png";
@@ -52,117 +52,84 @@ import webpack from "./icons/libraries/webpack.png";
 import mysql from "./icons/tools/mysql.png";
 import postgres from "./icons/tools/postgres.png";
 
-interface Props {}
-
-class Training extends React.Component<Props> {
-  awsSkillsList = [
-    { name: "CloudFormation", img: cloudformation },
-    { name: "CloudFront", img: cloudfront },
-    { name: "CloudWatch", img: cloudwatch },
-    { name: "CodeBuild", img: codebuild },
-    { name: "CodePipeline", img: codepipeline },
-    { name: "Cognito", img: cognito },
-    { name: "DynamoDB", img: dynamodb },
-    { name: "EC2", img: ec2 },
-    { name: "IAM", img: iam },
-    { name: "Lambda", img: lambda },
-    { name: "Route 53", img: route53 },
-    { name: "S3", img: s3 },
-    { name: "SNS", img: sns },
-    { name: "Step Functions", img: stepfunctions },
-    { name: "VPC", img: vpc },
+const Training: React.FC = (): JSX.Element => {
+  const awsSkillsList = [
+    { name: "CloudFormation", image: cloudformation },
+    { name: "CloudFront", image: cloudfront },
+    { name: "CloudWatch", image: cloudwatch },
+    { name: "CodeBuild", image: codebuild },
+    { name: "CodePipeline", image: codepipeline },
+    { name: "Cognito", image: cognito },
+    { name: "DynamoDB", image: dynamodb },
+    { name: "EC2", image: ec2 },
+    { name: "IAM", image: iam },
+    { name: "Lambda", image: lambda },
+    { name: "Route 53", image: route53 },
+    { name: "S3", image: s3 },
+    { name: "SNS", image: sns },
+    { name: "Step Functions", image: stepfunctions },
+    { name: "VPC", image: vpc },
   ];
 
-  languagesAndFrameworks = [
-    { name: "Angular", img: angular },
-    { name: "Ember", img: ember },
-    { name: "Go", img: go },
-    { name: "JavaScript", img: javascript },
-    { name: "PHP", img: php },
-    { name: "Python", img: python },
-    { name: "Rails", img: rails },
-    { name: "React", img: reactIcon },
-    { name: "Ruby", img: ruby },
-    { name: "Serverless Framework", img: serverless },
-    { name: "TypeScript", img: typescript },
-    { name: "WordPress", img: wordpress },
+  const languagesAndFrameworks = [
+    { name: "Angular", image: angular },
+    { name: "Ember", image: ember },
+    { name: "Go", image: go },
+    { name: "JavaScript", image: javascript },
+    { name: "PHP", image: php },
+    { name: "Python", image: python },
+    { name: "Rails", image: rails },
+    { name: "React", image: reactIcon },
+    { name: "Ruby", image: ruby },
+    { name: "Serverless Framework", image: serverless },
+    { name: "TypeScript", image: typescript },
+    { name: "WordPress", image: wordpress },
   ];
 
-  libraries = [
-    { name: "Axios", img: axios },
-    { name: "Chart JS", img: chartjs },
-    { name: "Cypress", img: cypress },
-    { name: "ESLint", img: eslint },
-    { name: "Enzyme", img: enzyme },
-    { name: "Flake8", img: python },
-    { name: "Jest", img: jest },
-    { name: "Onica Group's Sailplane", img: onica },
-    { name: "Puppeteer", img: puppeteer },
-    { name: "React Router", img: reactrouter },
-    { name: "Redux", img: redux },
-    { name: "Semantic UI", img: semanticUI },
-    { name: "Troposphere", img: python },
-    { name: "Webpack", img: webpack },
+  const libraries = [
+    { name: "Axios", image: axios },
+    { name: "Chart JS", image: chartjs },
+    { name: "Cypress", image: cypress },
+    { name: "ESLint", image: eslint },
+    { name: "Enzyme", image: enzyme },
+    { name: "Flake8", image: python },
+    { name: "Jest", image: jest },
+    { name: "Onica Group's Sailplane", image: onica },
+    { name: "Puppeteer", image: puppeteer },
+    { name: "React Router", image: reactrouter },
+    { name: "Redux", image: redux },
+    { name: "Semantic UI", image: semanticUI },
+    { name: "Troposphere", image: python },
+    { name: "Webpack", image: webpack },
   ];
 
-  tools = [
-    { name: "Bitbucket Pipelines", img: bitbucketPipelines },
-    { name: "Charles", img: charles },
-    { name: "Docker", img: docker },
-    { name: "MySQL", img: mysql },
-    { name: "Onica Group's - Runway", img: onica },
-    { name: "Postgres", img: postgres },
-    { name: "Selenium", img: selenium },
-    { name: "Vim", img: vim },
-    { name: "Visual Studio Code", img: vscode },
+  const tools = [
+    { name: "Bitbucket Pipelines", image: bitbucketPipelines },
+    { name: "Charles", image: charles },
+    { name: "Docker", image: docker },
+    { name: "MySQL", image: mysql },
+    { name: "Onica Group's - Runway", image: onica },
+    { name: "Postgres", image: postgres },
+    { name: "Selenium", image: selenium },
+    { name: "Vim", image: vim },
+    { name: "Visual Studio Code", image: vscode },
   ];
 
-  renderSkillsList(list: { name: string; img: string }[]) {
-    return list.map((skill: { name: string; img: string }) => {
-      const nameToLower = skill.name.toLowerCase().replace(" ", "");
-      return (
-        <li>
-          <span className={`skill ${nameToLower}`}>
-            <img src={skill.img} alt={skill.name} />
-            <span className="skill-text">{skill.name}</span>
-          </span>
-        </li>
-      );
-    });
-  }
-
-  renderSkills() {
-    return (
-      <div className="skills">
-        <Header inverted as="h2">
-          Skills
-        </Header>
-        <Header inverted as="h3">
-          Amazon Web Services
-        </Header>
-        <ul className="skills-list">
-          {this.renderSkillsList(this.awsSkillsList)}
-        </ul>
-        <Header inverted as="h3">
-          Languages and Frameworks
-        </Header>
-        <ul className="skills-list">
-          {this.renderSkillsList(this.languagesAndFrameworks)}
-        </ul>
-        <Header inverted as="h3">
-          Libraries
-        </Header>
-        <ul className="skills-list">{this.renderSkillsList(this.libraries)}</ul>
-        <Header inverted as="h3">
-          Tools
-        </Header>
-        <ul className="skills-list">{this.renderSkillsList(this.tools)}</ul>
-      </div>
-    );
-  }
-
-  renderTraining() {
-    return (
+  return (
+    <React.Fragment>
+      <Header
+        as="h1"
+        textAlign="center"
+        icon
+        inverted
+        size="huge"
+        className="page-header"
+      >
+        <Icon name="book" circular inverted color="orange" />
+        <Header.Content className="page-header-content">
+          Training
+        </Header.Content>
+      </Header>
       <div className="training">
         <ul>
           <li>
@@ -187,30 +154,20 @@ class Training extends React.Component<Props> {
           <li>Customer Service Manager Academy issued by AT&T Mobility</li>
         </ul>
       </div>
-    );
-  }
-
-  public render() {
-    return (
-      <React.Fragment>
-        <Header
-          as="h1"
-          textAlign="center"
-          icon
-          inverted
-          size="huge"
-          className="page-header"
-        >
-          <Icon name="book" circular inverted color="orange" />
-          <Header.Content className="page-header-content">
-            Training
-          </Header.Content>
+      <div className="skills">
+        <Header inverted as="h2">
+          Skills
         </Header>
-        {this.renderTraining()}
-        {this.renderSkills()}
-      </React.Fragment>
-    );
-  }
-}
+        <SkillsSection title="Amazon Web Services" skills={awsSkillsList} />
+        <SkillsSection
+          title="Languages and Frameworks"
+          skills={languagesAndFrameworks}
+        />
+        <SkillsSection title="Libraries" skills={libraries} />
+        <SkillsSection title="Tools" skills={tools} />
+      </div>
+    </React.Fragment>
+  );
+};
 
-export default connect(null, null)(Training);
+export default Training;
