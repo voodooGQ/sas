@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import blogData from "../../../components/blog/blog.json";
+import blogData from "../../../views/blog/blog.json";
 import { FETCH_BLOG_ARTICLE, SET_BLOG_ARTICLE_DATA } from "../../types";
 
 export const setBlogArticleData = () => {

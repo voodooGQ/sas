@@ -6,13 +6,13 @@ import history from "../history";
 import { setActiveNavItemFromStorage } from "../redux/actions/ui";
 import { HeaderState } from "../redux/types";
 import "./App.scss";
-import BlogDetail from "./blog/BlogDetail";
-import BlogList from "./blog/BlogList";
-import Experience from "./experience/Experience";
+import BlogDetail from "../views/blog/BlogDetail";
+import BlogList from "../views/blog/BlogList";
+import Experience from "../views/experience/Experience";
 import NotFound from "./NotFound";
-import Training from "./training/Training";
+import Training from "../views/training/Training";
 import Header from "./ui/Header";
-import Volunteer from "./volunteer/Volunteer";
+import Volunteer from "../views/volunteer/Volunteer";
 
 interface Props {
   header: HeaderState;
