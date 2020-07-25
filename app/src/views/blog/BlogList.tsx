@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Header, Icon } from "semantic-ui-react";
 import data from "./blog.json";
 import "./BlogList.scss";
@@ -32,4 +31,4 @@ const BlogList: React.FC = (): JSX.Element => {
   );
 };
 
-export default connect(null, null)(BlogList);
+export default BlogList;

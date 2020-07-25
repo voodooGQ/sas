@@ -9,7 +9,7 @@ import "./App.scss";
 import BlogDetail from "../views/blog/BlogDetail";
 import BlogList from "../views/blog/BlogList";
 import Experience from "../views/experience/Experience";
-import NotFound from "./NotFound";
+import NotFound from "../views/NotFound";
 import Training from "../views/training/Training";
 import Header from "./header/Header";
 import Volunteer from "../views/volunteer/Volunteer";
