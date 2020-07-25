@@ -11,7 +11,7 @@ import BlogList from "../views/blog/BlogList";
 import Experience from "../views/experience/Experience";
 import NotFound from "./NotFound";
 import Training from "../views/training/Training";
-import Header from "./ui/Header";
+import Header from "./header/Header";
 import Volunteer from "../views/volunteer/Volunteer";
 
 interface Props {
