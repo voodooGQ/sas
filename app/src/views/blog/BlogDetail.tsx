@@ -1,9 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import { Header, Icon, Loader } from "semantic-ui-react";
 import showdown from "showdown";
-import { fetchBlogArticle, setBlogArticleData } from "../../redux/actions/blog";
+import blogData from "./blog.json";
+import axios from "axios";
 import "./BlogDetail.scss";
 
 interface MatchParams {
@@ -12,13 +12,11 @@ interface MatchParams {
 
 interface Props extends RouteComponentProps<MatchParams> {
   articles: any;
-  currentArticleMarkdown: string;
-  setBlogArticleData: () => Promise<void>;
-  fetchBlogArticle: (article: any) => Promise<void>;
 }
 
 interface State {
   article: any;
+  markdown: any;
 }
 
 const converter = new showdown.Converter();
@@ -26,25 +24,32 @@ const converter = new showdown.Converter();
 class BlogDetail extends React.Component<Props, State> {
   state = {
     article: { title: undefined, icon: undefined, location: "" },
+    markdown: "",
   };
 
   componentDidMount = async () => {
-    this.props.setBlogArticleData().then(async () => {
-      this.setState({
-        article: this.props.articles.find((a: any) => {
-          return a.slug === this.props.match.params.slug;
-        }),
-      });
-      this.props.fetchBlogArticle(this.state.article);
+    this.setState({
+      article: blogData.articles.find((a: any) => {
+        return a.slug === this.props.match.params.slug;
+      }),
     });
   };
 
-  componentDidUpdate = () => {
+  componentDidUpdate = async () => {
+    const location =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      "/" +
+      this.state.article.location;
+    this.setState({
+      markdown: (await axios.get(location)).data,
+    });
     window.Prism.highlightAll();
   };
 
   render() {
-    if (!this.state.article) {
+    if (this.state.markdown === "") {
       return (
         <Loader active inline="centered" inverted>
           Loading article...
@@ -53,7 +58,7 @@ class BlogDetail extends React.Component<Props, State> {
     }
 
     const { title, icon } = this.state.article;
-    const html = converter.makeHtml(this.props.currentArticleMarkdown);
+    const html = converter.makeHtml(this.state.markdown);
 
     return (
       <React.Fragment>
@@ -79,14 +84,4 @@ class BlogDetail extends React.Component<Props, State> {
   }
 }
 
-const mapStateToProps = (state: any) => {
-  return {
-    articles: state.blog.articles,
-    currentArticleMarkdown: state.blog.currentArticleMarkdown,
-  };
-};
-
-export default connect(mapStateToProps, {
-  setBlogArticleData,
-  fetchBlogArticle,
-})(BlogDetail);
+export default BlogDetail;

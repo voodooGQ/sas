@@ -70,7 +70,6 @@ class Header extends React.Component<Props> {
           Volunteer
         </Menu.Item>
         <Menu.Item
-          as={Link}
           name="resume"
           onClick={() => {
             window.location.href = "/resume/shaneallensmith.pdf";
