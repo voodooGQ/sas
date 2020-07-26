@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Header, Icon } from "semantic-ui-react";
 
 interface Props {}
@@ -26,4 +25,4 @@ class NotFound extends React.Component<Props> {
   }
 }
 
-export default connect(null, null)(NotFound);
+export default NotFound;

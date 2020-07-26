@@ -38,7 +38,6 @@
     "react-dom": "^16.12.0",
     "react-fast-highlight": "^4.0.0",
     "react-highlight": "^0.12.0",
-    "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "redux-devtools-extension": "^2.13.8",

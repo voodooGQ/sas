@@ -1,89 +1,78 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useContext } from "react";
+import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 import { Link } from "react-router-dom";
-import { Menu, MenuItemProps } from "semantic-ui-react";
-import { setActiveNavItem } from "../../redux/actions/ui";
-import { HeaderState } from "../../redux/types";
+import { Menu } from "semantic-ui-react";
 import "./Header.scss";
 import me from "./me.jpeg";
 
-interface Props {
-  header: HeaderState;
-  setActiveNavItem: (navItem: string) => Promise<void>;
-}
+interface Props {}
 
-class Header extends React.Component<Props> {
-  public handleItemClick = (_event: any, data: MenuItemProps): void => {
-    if (data.name) {
-      this.props.setActiveNavItem(data.name);
-    }
-  };
+const Header: React.FC<Props> = (props): JSX.Element => {
+  const { active, toggleActive } = useContext(ActiveNavigationContext);
 
-  public render(): JSX.Element {
-    return (
-      <Menu stackable inverted widths={6} pointing size="huge" className="site">
-        <Menu.Item as={Link} name="blog" onClick={this.handleItemClick} to="/">
-          <img
-            src={me}
-            alt="Shane Allen Smith"
-            style={{ borderRadius: "50%" }}
-          />
-        </Menu.Item>
+  return (
+    <Menu stackable inverted widths={6} pointing size="huge" className="site">
+      <Menu.Item as={Link} name="blog" to="/">
+        <img src={me} alt="Shane Allen Smith" style={{ borderRadius: "50%" }} />
+      </Menu.Item>
 
-        <Menu.Item
-          as={Link}
-          name="blog"
-          active={this.props.header.active === "blog"}
-          onClick={this.handleItemClick}
-          to="/"
-        >
-          Blog
-        </Menu.Item>
+      <Menu.Item
+        as={Link}
+        name="blog"
+        active={active === "blog"}
+        onClick={() => {
+          toggleActive("blog");
+        }}
+        to="/"
+      >
+        Blog
+      </Menu.Item>
 
-        <Menu.Item
-          as={Link}
-          name="experience"
-          active={this.props.header.active === "experience"}
-          onClick={this.handleItemClick}
-          to="/experience"
-        >
-          Experience
-        </Menu.Item>
+      <Menu.Item
+        as={Link}
+        name="experience"
+        active={active === "experience"}
+        onClick={() => {
+          toggleActive("experience");
+        }}
+        to="/experience"
+      >
+        Experience
+      </Menu.Item>
 
-        <Menu.Item
-          as={Link}
-          name="training"
-          active={this.props.header.active === "training"}
-          onClick={this.handleItemClick}
-          to="/training"
-        >
-          Training
-        </Menu.Item>
+      <Menu.Item
+        as={Link}
+        name="training"
+        active={active === "training"}
+        onClick={() => {
+          toggleActive("training");
+        }}
+        to="/training"
+      >
+        Training
+      </Menu.Item>
 
-        <Menu.Item
-          as={Link}
-          name="volunteer"
-          active={this.props.header.active === "volunteer"}
-          onClick={this.handleItemClick}
-          to="/volunteer"
-        >
-          Volunteer
-        </Menu.Item>
-        <Menu.Item
-          name="resume"
-          onClick={() => {
-            window.location.href = "/resume/shaneallensmith.pdf";
-          }}
-        >
-          Resume
-        </Menu.Item>
-      </Menu>
-    );
-  }
-}
-
-const mapStateToProps = (state: { header: HeaderState }) => {
-  return { header: state.header };
+      <Menu.Item
+        as={Link}
+        name="volunteer"
+        active={active === "volunteer"}
+        onClick={() => {
+          toggleActive("volunteer");
+        }}
+        to="/volunteer"
+      >
+        Volunteer
+      </Menu.Item>
+      <Menu.Item
+        name="resume"
+        onClick={() => {
+          window.location.href = "/resume/shaneallensmith.pdf";
+        }}
+      >
+        Resume
+      </Menu.Item>
+    </Menu>
+  );
 };
 
-export default connect(mapStateToProps, { setActiveNavItem })(Header);
+export default Header;

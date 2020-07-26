@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import { ActiveNavigationProvider } from "./providers/activeNavigationProvider";
 
 import "semantic-ui-css/semantic.min.css";
 
 ReactDOM.render(
-  <Provider store={store}>
+  <ActiveNavigationProvider>
     <App />
-  </Provider>,
+  </ActiveNavigationProvider>,
   document.getElementById("root")
 );

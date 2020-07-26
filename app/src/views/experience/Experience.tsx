@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Header, Icon } from "semantic-ui-react";
 import ExperienceCard from "../../components/experience/ExperienceCard";
 import fiftybelow from "./50below.png";
@@ -112,4 +111,4 @@ class Experience extends React.Component<Props> {
   }
 }
 
-export default connect(null, null)(Experience);
+export default Experience;

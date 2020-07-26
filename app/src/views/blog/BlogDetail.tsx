@@ -32,7 +32,7 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
         return article.slug === match.params.slug;
       })
     );
-  }, [setArticle, blogData, match]);
+  }, [setArticle, match]);
 
   // When we have an article get the specific markdown for that article
   useEffect(() => {
@@ -48,7 +48,7 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
         window.Prism.highlightAll();
       });
     }
-  }, [article, window.location, window.Prism, axios, setMarkdown]);
+  }, [article, setMarkdown]);
 
   // Show a loader if there's no article or markdown
   if (!article || !markdown) {
