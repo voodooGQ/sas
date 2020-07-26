@@ -1,6 +1,7 @@
 import React from "react";
 import { Header, Icon } from "semantic-ui-react";
 import data from "./blog.json";
+import { Link } from "react-router-dom";
 import "./BlogList.scss";
 
 const BlogList: React.FC = (): JSX.Element => {
@@ -21,7 +22,7 @@ const BlogList: React.FC = (): JSX.Element => {
         {data.articles.map((article) => {
           return (
             <li key={article.slug} className="blog-item">
-              <a href={`/blog/${article.slug}`}>{article.title}</a> -{" "}
+              <Link to={`/blog/${article.slug}`}>{article.title}</Link> -{" "}
               <span className="blog-date">{article.date}</span>
             </li>
           );

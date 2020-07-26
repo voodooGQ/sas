@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 import { Header, Icon, Loader } from "semantic-ui-react";
 import showdown from "showdown";
@@ -10,9 +10,7 @@ interface MatchParams {
   slug: string;
 }
 
-interface Props extends RouteComponentProps<MatchParams> {
-  articles: any;
-}
+interface Props extends RouteComponentProps<MatchParams> {}
 
 interface State {
   article: any;
@@ -21,67 +19,68 @@ interface State {
 
 const converter = new showdown.Converter();
 
-class BlogDetail extends React.Component<Props, State> {
-  state = {
-    article: { title: undefined, icon: undefined, location: "" },
-    markdown: "",
-  };
+const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
+  const [article, setArticle] = useState<{
+    title: string;
+    slug: string;
+    icon: string;
+    location: string;
+  }>();
 
-  componentDidMount = async () => {
-    this.setState({
-      article: blogData.articles.find((a: any) => {
-        return a.slug === this.props.match.params.slug;
-      }),
-    });
-  };
+  const [markdown, setMarkdown] = useState<string>();
 
-  componentDidUpdate = async () => {
-    const location =
-      window.location.protocol +
-      "//" +
-      window.location.host +
-      "/" +
-      this.state.article.location;
-    this.setState({
-      markdown: (await axios.get(location)).data,
-    });
-    window.Prism.highlightAll();
-  };
+  useEffect(() => {
+    setArticle(
+      blogData.articles.find((article: any) => {
+        return article.slug === match.params.slug;
+      })
+    );
+  }, [setArticle, blogData, match]);
 
-  render() {
-    if (this.state.markdown === "") {
-      return (
-        <Loader active inline="centered" inverted>
-          Loading article...
-        </Loader>
-      );
+  useEffect(() => {
+    if (article) {
+      const location =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        "/" +
+        article.location;
+      axios.get(location).then((response) => {
+        setMarkdown(response.data);
+        window.Prism.highlightAll();
+      });
     }
+  }, [article, window.location, window.Prism, axios, setMarkdown]);
 
-    const { title, icon } = this.state.article;
-    const html = converter.makeHtml(this.state.markdown);
-
+  if (!article || !markdown) {
     return (
-      <React.Fragment>
-        <Header
-          as="h1"
-          textAlign="center"
-          icon
-          inverted
-          size="huge"
-          className="page-header"
-        >
-          <Icon name={icon} circular inverted color="purple" />
-          <Header.Content className="page-header-content">
-            {title}
-          </Header.Content>
-        </Header>
-        <div
-          className="article line-numbers"
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></div>
-      </React.Fragment>
+      <Loader active inline="centered" inverted>
+        Loading article...
+      </Loader>
     );
   }
-}
+  return (
+    <div className="blog-article">
+      <Header
+        as="h1"
+        textAlign="center"
+        icon
+        inverted
+        size="huge"
+        className="page-header"
+      >
+        {/* TODO: Fix this type */}
+        <Icon name={article.icon as "react"} circular inverted color="purple" />
+        <Header.Content className="page-header-content">
+          {article.title}
+        </Header.Content>
+      </Header>
+      <div
+        className="article line-numbers"
+        dangerouslySetInnerHTML={{ __html: converter.makeHtml(markdown) }}
+      ></div>
+    </div>
+  );
+};
 
 export default BlogDetail;
