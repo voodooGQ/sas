@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 import { RouteComponentProps } from "react-router";
 import { Header, Icon, SemanticICONS, Loader } from "semantic-ui-react";
 import showdown from "showdown";
@@ -15,6 +16,8 @@ interface Props extends RouteComponentProps<MatchParams> {}
 const converter = new showdown.Converter();
 
 const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
+  const { toggleActive } = useContext(ActiveNavigationContext);
+
   const [article, setArticle] = useState<{
     title: string;
     slug: string;
@@ -24,6 +27,11 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
   }>();
 
   const [markdown, setMarkdown] = useState<string>();
+
+  // Set the active navigation item
+  useEffect(() => {
+    toggleActive("blog");
+  }, [toggleActive]);
 
   // Get the specific blog article from the list based on slug
   useEffect(() => {

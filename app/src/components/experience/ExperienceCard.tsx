@@ -21,8 +21,8 @@ const ExperienceCard: React.FC<Props> = ({
         <h3 className="experience-position">{position}</h3>
         <ul className="experience-items">
           {experienceItems.map(
-            (item: string | JSX.Element): JSX.Element => {
-              return <li>{item}</li>;
+            (item: string | JSX.Element, index: number): JSX.Element => {
+              return <li key={index}>{item}</li>;
             }
           )}
         </ul>

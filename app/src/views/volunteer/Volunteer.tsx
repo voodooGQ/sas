@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Header, Icon } from "semantic-ui-react";
 import data from "./volunteer.json";
 import OpenSourceItem from "../../components/volunteer/OpenSourceItem";
 import VolunteerItem from "../../components/volunteer/VolunteerItem";
 import "./Volunteer.scss";
+import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 
 const Volunteer: React.FC = (): JSX.Element => {
+  const { toggleActive } = useContext(ActiveNavigationContext);
+
+  useEffect(() => {
+    toggleActive("volunteer");
+  }, [toggleActive]);
+
   return (
     <div className="volunteer">
       <Header

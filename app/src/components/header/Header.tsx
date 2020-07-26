@@ -8,7 +8,7 @@ import me from "./me.jpeg";
 interface Props {}
 
 const Header: React.FC<Props> = (props): JSX.Element => {
-  const { active, toggleActive } = useContext(ActiveNavigationContext);
+  const { active } = useContext(ActiveNavigationContext);
 
   return (
     <Menu stackable inverted widths={6} pointing size="huge" className="site">
@@ -16,15 +16,7 @@ const Header: React.FC<Props> = (props): JSX.Element => {
         <img src={me} alt="Shane Allen Smith" style={{ borderRadius: "50%" }} />
       </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        name="blog"
-        active={active === "blog"}
-        onClick={() => {
-          toggleActive("blog");
-        }}
-        to="/"
-      >
+      <Menu.Item as={Link} name="blog" active={active === "blog"} to="/">
         Blog
       </Menu.Item>
 
@@ -32,9 +24,6 @@ const Header: React.FC<Props> = (props): JSX.Element => {
         as={Link}
         name="experience"
         active={active === "experience"}
-        onClick={() => {
-          toggleActive("experience");
-        }}
         to="/experience"
       >
         Experience
@@ -44,9 +33,6 @@ const Header: React.FC<Props> = (props): JSX.Element => {
         as={Link}
         name="training"
         active={active === "training"}
-        onClick={() => {
-          toggleActive("training");
-        }}
         to="/training"
       >
         Training
@@ -56,9 +42,6 @@ const Header: React.FC<Props> = (props): JSX.Element => {
         as={Link}
         name="volunteer"
         active={active === "volunteer"}
-        onClick={() => {
-          toggleActive("volunteer");
-        }}
         to="/volunteer"
       >
         Volunteer

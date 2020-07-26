@@ -1,8 +1,9 @@
 import "./Training.scss";
 
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Header, Icon } from "semantic-ui-react";
 import SkillsSection from "../../components/training/SkillsSection";
+import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 
 import cloudformation from "./icons/aws/cloudformation.png";
 import cloudfront from "./icons/aws/cloudfront.png";
@@ -53,6 +54,12 @@ import mysql from "./icons/tools/mysql.png";
 import postgres from "./icons/tools/postgres.png";
 
 const Training: React.FC = (): JSX.Element => {
+  const { toggleActive } = useContext(ActiveNavigationContext);
+
+  useEffect(() => {
+    toggleActive("training");
+  }, [toggleActive]);
+
   const awsSkillsList = [
     { name: "CloudFormation", image: cloudformation },
     { name: "CloudFront", image: cloudfront },

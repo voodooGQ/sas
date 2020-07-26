@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Header, Icon } from "semantic-ui-react";
 import data from "./blog.json";
 import { Link } from "react-router-dom";
 import "./BlogList.scss";
+import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 
 const BlogList: React.FC = (): JSX.Element => {
+  const { toggleActive } = useContext(ActiveNavigationContext);
+
+  useEffect(() => {
+    toggleActive("blog");
+  }, [toggleActive]);
+
   return (
     <div className="blog-list">
       <Header
