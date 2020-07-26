@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
-import { Header, Icon, Loader } from "semantic-ui-react";
+import { Header, Icon, SemanticICONS, Loader } from "semantic-ui-react";
 import showdown from "showdown";
 import blogData from "./blog.json";
 import axios from "axios";
@@ -12,23 +12,20 @@ interface MatchParams {
 
 interface Props extends RouteComponentProps<MatchParams> {}
 
-interface State {
-  article: any;
-  markdown: any;
-}
-
 const converter = new showdown.Converter();
 
 const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
   const [article, setArticle] = useState<{
     title: string;
     slug: string;
-    icon: string;
+    icon: SemanticICONS | string;
     location: string;
+    date: string;
   }>();
 
   const [markdown, setMarkdown] = useState<string>();
 
+  // Get the specific blog article from the list based on slug
   useEffect(() => {
     setArticle(
       blogData.articles.find((article: any) => {
@@ -37,6 +34,7 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
     );
   }, [setArticle, blogData, match]);
 
+  // When we have an article get the specific markdown for that article
   useEffect(() => {
     if (article) {
       const location =
@@ -52,6 +50,7 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
     }
   }, [article, window.location, window.Prism, axios, setMarkdown]);
 
+  // Show a loader if there's no article or markdown
   if (!article || !markdown) {
     return (
       <Loader active inline="centered" inverted>
@@ -69,8 +68,12 @@ const BlogDetail: React.FC<Props> = ({ match }): JSX.Element => {
         size="huge"
         className="page-header"
       >
-        {/* TODO: Fix this type */}
-        <Icon name={article.icon as "react"} circular inverted color="purple" />
+        <Icon
+          name={article.icon as SemanticICONS}
+          circular
+          inverted
+          color="purple"
+        />
         <Header.Content className="page-header-content">
           {article.title}
         </Header.Content>
