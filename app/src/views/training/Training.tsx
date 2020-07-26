@@ -139,39 +139,48 @@ const Training: React.FC = (): JSX.Element => {
       </Header>
       <div className="training">
         <ul>
-          <li>
+          <li key="aws">
             Amazon Web Services Certified Developer Associate issued by Amazon
             Web Services
           </li>
-          <li>
+          <li key="mcdba">
             Microsoft Certified Database Administrator (MCDBA) issued by
             Connecting Point Information Technology School
           </li>
-          <li>
+          <li key="managing-emotions">
             Managing Emotions Under Pressure issued by Fred Pryor CareerTrack
           </li>
-          <li>
+          <li key="dealing-with-difficult-people">
             Dealing with Difficult People issued by Fred Pryor CareerTrack
           </li>
-          <li>
+          <li key="team-building">
             Team Building, Mentoring, and Coaching Skills issued by Fred Pryor
             CareerTrack
           </li>
-          <li>The Ultimate Supervisor issued by Fred Pryor CareerTrack</li>
-          <li>Customer Service Manager Academy issued by AT&T Mobility</li>
+          <li key="ultimate-supervisor">
+            The Ultimate Supervisor issued by Fred Pryor CareerTrack
+          </li>
+          <li key="customer-service-manager-academy">
+            Customer Service Manager Academy issued by AT&T Mobility
+          </li>
         </ul>
       </div>
       <div className="skills">
         <Header inverted as="h2">
           Skills
         </Header>
-        <SkillsSection title="Amazon Web Services" skills={awsSkillsList} />
+        <SkillsSection
+          title="Amazon Web Services"
+          key="aws"
+          skills={awsSkillsList}
+        />
         <SkillsSection
           title="Languages and Frameworks"
+          key="languages-and-frameworks"
           skills={languagesAndFrameworks}
         />
-        <SkillsSection title="Libraries" skills={libraries} />
-        <SkillsSection title="Tools" skills={tools} />
+        <SkillsSection title="Libraries" key="libraries" skills={libraries} />
+        <SkillsSection title="Tools" key="tools" skills={tools} />
       </div>
     </React.Fragment>
   );

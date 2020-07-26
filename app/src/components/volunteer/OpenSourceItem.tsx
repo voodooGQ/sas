@@ -26,8 +26,8 @@ const OpenSourceItem: React.FC<Props> = ({
         {title} by {owner}
       </Header>
       <ul className="open-source-link-list">
-        {contributions.map((link) => (
-          <li>
+        {contributions.map((link, index) => (
+          <li key={index}>
             <a href={`${repo}/${link}`}>
               {repo}/{link}
             </a>

@@ -28,10 +28,11 @@ const Volunteer: React.FC = (): JSX.Element => {
           Volunteer
         </Header.Content>
       </Header>
-      {data.volunteer.map((v) => {
+      {data.volunteer.map((v, i) => {
         return (
           <VolunteerItem
             title={v.title}
+            key={v.title + i}
             year={v.year}
             description={v.description}
           />
@@ -44,6 +45,7 @@ const Volunteer: React.FC = (): JSX.Element => {
         return (
           <OpenSourceItem
             title={os.title}
+            key={os.title}
             owner={os.owner}
             contributions={os.contributions}
             repo={os.repo}

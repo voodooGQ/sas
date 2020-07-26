@@ -9,7 +9,7 @@ const SkillsList: React.FC<Props> = ({ list }): JSX.Element => {
   const items = list.map((skill: { name: string; image: string }) => {
     const nameToLower = skill.name.toLowerCase().replace(" ", "");
     return (
-      <li>
+      <li key={nameToLower}>
         <span className={`skill ${nameToLower}`}>
           <Image src={skill.image} alt={skill.name} />
           <span className="skill-text">{skill.name}</span>
