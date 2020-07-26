@@ -1,17 +1,42 @@
-body {
-  background-color: #222222 !important;
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.body {
   font-family: "Jost", sans-serif !important;
+  min-height: 100%;
+}
+
+.body.dark {
+  background-color: #222222 !important;
   color: #fbf1c7;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.body.light {
+  color: #222222 !important;
+  background-color: #fbf1c7;
+}
+
+.body.dark h1,
+.body.dark h2,
+.body.dark h3,
+.body.dark h4,
+.body.dark h5,
+.body.dark h6 {
   font-family: "Jost", sans-serif !important;
   color: #fbf1c7 !important;
+}
+
+.body.light h1,
+.body.light h2,
+.body.light h3,
+.body.light h4,
+.body.light h5,
+.body.light h6 {
+  font-family: "Jost", sans-serif !important;
+  color: #222222 !important;
 }
 
 .ui.site.container {

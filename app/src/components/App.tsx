@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import history from "../history";
@@ -10,12 +10,17 @@ import NotFound from "../views/NotFound";
 import Training from "../views/training/Training";
 import Header from "./header/Header";
 import Volunteer from "../views/volunteer/Volunteer";
+import ThemeSwitcher from "../components/theme/ThemeSwitcher";
+import { ThemeContext } from "../context/ThemeContext";
 
 const App: React.FC = (): JSX.Element => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <React.Fragment>
+    <div className={`body ${theme}`}>
       <Router history={history}>
         <Container className="site">
+          <ThemeSwitcher />
           <Header></Header>
           <Switch>
             <Route path="/" exact component={BlogList} />
@@ -27,7 +32,7 @@ const App: React.FC = (): JSX.Element => {
           </Switch>
         </Container>
       </Router>
-    </React.Fragment>
+    </div>
   );
 };
 
