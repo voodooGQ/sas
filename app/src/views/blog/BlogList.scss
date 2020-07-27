@@ -7,10 +7,17 @@
     font-size: 1.4em;
     margin-bottom: 15px;
     .blog-date {
-      color: #ccc;
       font-size: 0.6em;
       position: relative;
       top: -2px;
     }
   }
+}
+
+.dark .blog-date {
+  color: #ccc;
+}
+
+.light .blog-date {
+  color: #222;
 }

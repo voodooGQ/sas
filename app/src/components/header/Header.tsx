@@ -1,17 +1,23 @@
 import React, { useContext } from "react";
 import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import { Link } from "react-router-dom";
 import { Menu } from "semantic-ui-react";
 import "./Header.scss";
 import me from "./me.jpeg";
 
-interface Props {}
-
-const Header: React.FC<Props> = (props): JSX.Element => {
+const Header: React.FC = (): JSX.Element => {
   const { active } = useContext(ActiveNavigationContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <Menu stackable inverted widths={6} pointing size="huge" className="site">
+    <Menu
+      stackable
+      inverted={theme === "dark"}
+      widths={6}
+      size="huge"
+      className={`site ${theme}`}
+    >
       <Menu.Item as={Link} name="blog" to="/">
         <img src={me} alt="Shane Allen Smith" style={{ borderRadius: "50%" }} />
       </Menu.Item>

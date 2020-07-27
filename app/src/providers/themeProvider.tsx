@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
-const settings: { light: {}; dark: {} } = {
-  light: {
-    background: "#f0f0f0",
-    fontColor: "#444444",
-    inputBackgroundColor: "#ffffff",
-    cardBackground: "#ffffff",
-  },
-  dark: {
-    background: "#222222",
-    fontColor: "#f0f0f0",
-    inputBackgroundColor: "grey",
-    cardBackground: "#1b1c1d",
-  },
-};
-
 export const ThemeProvider: React.FC = ({ children }): JSX.Element => {
   const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("ui.theme") as "light" | "dark") || "light"
+    (localStorage.getItem("ui.theme") as "light" | "dark") || "dark"
   );
 
   const toggleTheme = (): void => {
@@ -28,9 +13,7 @@ export const ThemeProvider: React.FC = ({ children }): JSX.Element => {
   };
 
   return (
-    <ThemeContext.Provider
-      value={{ theme, toggleTheme, settings: settings[theme] }}
-    >
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

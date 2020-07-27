@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "semantic-ui-react";
+import "./SkillsList.scss";
 
 interface Props {
   list: { name: string; image: string }[];

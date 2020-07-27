@@ -3,7 +3,6 @@ import { Header, Icon } from "semantic-ui-react";
 import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 import ExperienceCard from "../../components/experience/ExperienceCard";
 import fiftybelow from "./50below.png";
-import "./Experience.scss";
 import fastersolutions from "./faster-solutions.jpeg";
 import linuxacademy from "./linux-academy.jpg";
 import logikcull from "./logikcull.png";

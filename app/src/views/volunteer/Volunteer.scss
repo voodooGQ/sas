@@ -1,16 +1,21 @@
 .volunteer-item {
   padding-bottom: 50px;
-  color: #fbf1c7;
   font-size: 1.2em;
 }
 
-.open-source-item {
+.dark .open-source-item,
+.dark .volunteer-item {
   color: #fbf1c7;
+}
 
-  .open-source-link-list {
-    font-size: 1.2em;
-    li {
-      padding-bottom: 10px;
-    }
+.light .open-source-item,
+.light .volunteer-item {
+  color: #222;
+}
+
+.open-source-link-list {
+  font-size: 1.2em;
+  li {
+    padding-bottom: 10px;
   }
 }

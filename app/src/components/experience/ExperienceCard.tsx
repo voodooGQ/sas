@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import "./ExperienceCard.scss";
 
 interface Props {
   title: string;
@@ -13,8 +15,10 @@ const ExperienceCard: React.FC<Props> = ({
   position,
   experienceItems,
 }): JSX.Element => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="experience">
+    <div className={`experience ${theme}`}>
       <div className="experience-card">
         <img className="experience-image" src={imageSrc} alt={title} />
         <h2 className="experience-header">{title} </h2>

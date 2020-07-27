@@ -1,11 +1,31 @@
 .article {
   font-size: 1.5em;
+}
+
+.dark .article {
   color: #fbf1c7;
 }
 
+.light .article {
+  color: #222;
+}
+
 code {
-  background: #363636;
-  color: red;
   border-radius: 5px;
   padding: 0 5px;
+}
+
+.dark code {
+  background: #363636;
+  color: red;
+}
+
+.light code {
+  background: #fff;
+  color: red;
+}
+
+.dark pre code,
+.light pre code {
+  background: none;
 }
