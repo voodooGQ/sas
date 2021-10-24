@@ -26,7 +26,20 @@ email: voodoogq@gmail.com | phone: 715.513.9160 | website: shaneallensmith.com
 
 ### Experience
 
-#### Software Engineer III @ Rackspace (formerly Onica) [**May 2019 - Present**]
+#### Senior Production Engineer @ Kajabi [**September 2020 - Present**]
+- Created the local infrastructure and release cycle automations for Kajabi's Sage
+  Design System. The Sage Design System is a culmination of designers and developers
+  working together to build high-quality repeatable design principles for the Kajabi
+  platform. The underlying automations allow the development teams to iterate on
+  releases faster and reduces the chance of human-introduced bugs.
+- Helped define and evolve infrastructure SLOs and collaborated with application
+  developers to define and measure product-level SLOs and metrics.
+- Introduced acceptance testing into the CI/CD process, allowing our stakeholders
+  to define criteria for application success. Automated testing gives us the
+  confidence that the application is performing up to the expectations of the
+  business and its stakeholders.
+
+#### Software Engineer III @ Rackspace (formerly Onica) [**May 2019 - September 2020**]
 
 - Responsible for Research and Development on various cloud based technologies to
   assist in the creation of tools for our development teams. This often required

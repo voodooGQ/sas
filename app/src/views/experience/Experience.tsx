@@ -8,6 +8,7 @@ import linuxacademy from "./linux-academy.jpg";
 import logikcull from "./logikcull.png";
 import nerdery from "./nerdery.png";
 import rackspace from "./rackspace.png";
+import kajabi from './kajabi.png';
 
 const Experience: React.FC = (): JSX.Element => {
   const { toggleActive } = useContext(ActiveNavigationContext);
@@ -32,6 +33,26 @@ const Experience: React.FC = (): JSX.Element => {
         </Header.Content>
       </Header>
       <div className="experience">
+        <ExperienceCard
+          key="kajabi"
+          title="Kajabi"
+          imageSrc={kajabi}
+          position="Senior Production Engineer"
+          experienceItems={[
+            <p>
+              Created the local infrastructure and release cycle automations for{" "}
+              <a
+                href="https://github.com/kajabi/sage-lib/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kajabi's Sage Design System
+              </a>. The Sage Design System is a culmination of designers and developers working together to build high-quality repeatable design principles for the Kajabi platform. The underlying automations allow the development teams to iterate on releases faster and reduces the chance of human-introduced bugs.
+            </p>,
+            "Helped define and evolve infrastructure SLOs and collaborated with application developers to define and measure product-level SLOs and metrics.",
+            "Introduced acceptance testing into the CI/CD process, allowing our stakeholders to define criteria for application success. Automated testing gives us the confidence that the application is performing up to the expectations of the business and its stakeholders."
+          ]}
+        />
         <ExperienceCard
           key="rackspace"
           title="Rackspace"

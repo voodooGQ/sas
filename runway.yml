@@ -2,7 +2,7 @@ deployments:
   - modules:
       - path: app
         type: static
-        profile: personal
+        profile: default
         environments:
           dev:
             namespace: sas-dev
@@ -25,4 +25,4 @@ deployments:
     regions:
       - us-east-1
     env_vars:
-      AWS_PROFILE: ${var aws_profile.${env DEPLOY_ENVIRONMENT}::default=personal}
+      AWS_PROFILE: ${var aws_profile.${env DEPLOY_ENVIRONMENT}::default=default}
