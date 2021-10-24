@@ -5,53 +5,38 @@ import { Header, Icon } from "semantic-ui-react";
 import SkillsSection from "../../components/training/SkillsSection";
 import { ActiveNavigationContext } from "../../context/ActiveNavigationContext";
 
+import axios from "./icons/libraries/axios.png";
 import cloudformation from "./icons/aws/cloudformation.png";
 import cloudfront from "./icons/aws/cloudfront.png";
 import cloudwatch from "./icons/aws/cloudwatch.png";
-import codebuild from "./icons/aws/codebuild.png";
-import codepipeline from "./icons/aws/codepipeline.png";
+import cobra from './icons/libraries/cobra.png'
 import cognito from "./icons/aws/cognito.png";
+import docker from "./icons/tools/docker.png";
 import dynamodb from "./icons/aws/dynamodb.png";
-import ec2 from "./icons/aws/ec2.png";
-import iam from "./icons/aws/iam.png";
-import lambda from "./icons/aws/lambda.png";
-import route53 from "./icons/aws/route53.png";
-import s3 from "./icons/aws/s3.png";
-import sns from "./icons/aws/sns.png";
-import stepfunctions from "./icons/aws/stepfunctions.png";
-import vpc from "./icons/aws/vpc.png";
-import angular from "./icons/languages-and-frameworks/angular.png";
-import ember from "./icons/languages-and-frameworks/ember.png";
-import go from "./icons/languages-and-frameworks/go.png";
-import javascript from "./icons/languages-and-frameworks/javascript.png";
-import php from "./icons/languages-and-frameworks/php.png";
-import python from "./icons/languages-and-frameworks/python.png";
-import rails from "./icons/languages-and-frameworks/rails.png";
-import reactIcon from "./icons/languages-and-frameworks/react.png";
-import ruby from "./icons/languages-and-frameworks/ruby.png";
-import typescript from "./icons/languages-and-frameworks/typescript.png";
-import wordpress from "./icons/languages-and-frameworks/wordpress.png";
 import enzyme from "./icons/libraries/airbnb.png";
-import axios from "./icons/libraries/axios.png";
-import chartjs from "./icons/libraries/chart-js.png";
-import cypress from "./icons/libraries/cypress.png";
 import eslint from "./icons/libraries/eslint.png";
+import go from "./icons/languages-and-frameworks/go.png";
+import iam from "./icons/aws/iam.png";
+import javascript from "./icons/languages-and-frameworks/javascript.png";
 import jest from "./icons/libraries/jest.png";
-import puppeteer from "./icons/libraries/puppeteer.png";
+import lambda from "./icons/aws/lambda.png";
+import mysql from "./icons/tools/mysql.png";
+import onica from "../experience/onica.png";
+import postgres from "./icons/tools/postgres.png";
+import reactIcon from "./icons/languages-and-frameworks/react.png";
 import reactrouter from "./icons/libraries/react-router.png";
 import redux from "./icons/libraries/redux.png";
-import semanticUI from "./icons/libraries/semantic-ui.png";
-import bitbucketPipelines from "./icons/tools/bitbucketPipelines.png";
-import docker from "./icons/tools/docker.png";
-import onica from "../experience/onica.png";
-import charles from "./icons/tools/charles.png";
-import serverless from "./icons/languages-and-frameworks/serverless.png";
-import vscode from "./icons/tools/vscode.png";
+import route53 from "./icons/aws/route53.png";
+import s3 from "./icons/aws/s3.png";
 import selenium from "./icons/tools/selenium.png";
+import semanticUI from "./icons/libraries/semantic-ui.png";
+import serverless from "./icons/languages-and-frameworks/serverless.png";
+import stepfunctions from "./icons/aws/stepfunctions.png";
+import terraform from "./icons/tools/terraform.png"
+import typescript from "./icons/languages-and-frameworks/typescript.png";
 import vim from "./icons/tools/vim.png";
+import vscode from "./icons/tools/vscode.png";
 import webpack from "./icons/libraries/webpack.png";
-import mysql from "./icons/tools/mysql.png";
-import postgres from "./icons/tools/postgres.png";
 
 const Training: React.FC = (): JSX.Element => {
   const { toggleActive } = useContext(ActiveNavigationContext);
@@ -83,6 +68,7 @@ const Training: React.FC = (): JSX.Element => {
 
   const libraries = [
     { name: "Axios", image: axios },
+    { name: "Cobra", image: cobra },
     { name: "ESLint", image: eslint },
     { name: "Enzyme", image: enzyme },
     { name: "Jest", image: jest },
@@ -99,6 +85,7 @@ const Training: React.FC = (): JSX.Element => {
     { name: "Onica Group's - Runway", image: onica },
     { name: "Postgres", image: postgres },
     { name: "Selenium", image: selenium },
+    { name: "Terraform", image: terraform },
     { name: "Vim", image: vim },
     { name: "Visual Studio Code", image: vscode },
   ];
