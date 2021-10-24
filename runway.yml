@@ -9,7 +9,7 @@ deployments:
           prod:
             namespace: sas-prod
             staticsite_aliases: shaneallensmith.com,www.shaneallensmith.com
-            staticsite_acmcert_arn: arn:aws:acm:us-east-1:212015066383:certificate/8425b8d1-2ffd-4d28-aa07-07705f667c9a
+            staticsite_acmcert_arn: arn:aws:acm:us-east-1:212015066383:certificate/5d426922-878a-4254-a32d-371790f86cd8
             staticsite_custom_error_responses:
               - ErrorCode: 403
                 ResponseCode: 200
